@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +10,13 @@
     <link rel="stylesheet" href="./bootstrap.css">
 </head>
 
-<body >
+<body style="background-color: black;">
 
 
-    <div class="container-fluid bg-dark text-white " >
+    <div class="container-fluid text-white " >
         
         <div class="col-md-12 vh-100  d-flex ">
-            <div class="col-md-6 d-flex align-items-center justify-content-center bg-dark text-white">
+            <div class="col-md-6 d-flex align-items-center justify-content-center  text-white">
                 <div class="x-logo" style="font-size: 4rem; font-weight: bold;">
                     <g style="margin-left:20% ; margin-top:10% ;">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="60%" height="60vh"
@@ -27,27 +29,38 @@
                 </div>
             </div>
            
-            <div class="col-md-6   bg-dark text-white ">
-                <div class="col-md-4 d-flex align-items-center justify-content-center"> 
-                    <h1 >Şu anda olup bitenler</h1>
+            <div class="col-md-6  mt-5 " style="margin-right: 10%; ">
+                <div class="col-md-4 " class="d-flex"> 
+                    <h1 style="font-size: 48px; font-family: 'Arial', sans-serif; font-weight: bold; line-height: 1.2; color: #ffffff;">
+                        Şu anda olup bitenler
+                    </h1>
+
                 </div>
                 <div class="col-md-4">
                     <h2>Hemen katıl.</h2>
                 </div>
                 <div class="mb-4">
-                    <div class="mb-3"><button type="submit" class="btn btn-light">gmail ile kaydol</button></div>
-                    <div class="mb-3"><button type="submit" class="btn btn-light">apple ile kaydol</button></div>
-                    <div class="mb-3    ">--------VEYA-------</div>
-                    <div class="mb-4"><button type="submit" class="btn btn-primary">hesap oluştur</button></div>
+                    <div class="mb-3"><button type="submit" class="btn btn-light w-50 ">gmail ile kaydol</button></div>
+                    <div class="mb-3"><button type="submit" class="btn btn-light w-50">apple ile kaydol</button></div>
+                    <div class="mb-3   d-flex  align-items-center"><hr style="width: 22%; "> VEYA <hr style="width: 22%;"></div>
+                    <div class="mb-4"><button type="submit" class="btn btn-primary w-50">hesap oluştur</button></div>
 
 
-                    <div>By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use.
+                    <div class="text-muted small mt-4">
+                        <footer>
+                            By signing up, you agree to the 
+                            <a href="#" class="text-decoration-none text-primary">Terms of Service</a> and 
+                            <a href="#" class="text-decoration-none text-primary">Privacy Policy</a>, including 
+                            <a href="#" class="text-decoration-none text-primary">Cookie Use</a>.
+                        </footer>
+                    </div>
+                    </div>
+                    <div class="mt-5" >
+                        <div style="font-family: Arial, Helvetica, sans-serif;">Zaten bir hesabınız var mı?</div>
+                        <div><button type="submit" class="btn btn-secondary w-50 " >Giriş yap</button></div>
                     </div>
                 </div>
-                <div>
-                    <div>Zaten bir hesabınız var mı?</div>
-                    <div><button type="submit" class="btn btn-secondary " >Giriş yap</button></div>
-                </div>
+                
             </div>
             
 
