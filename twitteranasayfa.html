@@ -7,7 +7,7 @@
     <title>Anasayfa / X</title>
     <link rel="stylesheet" href="./bootstrap.css">
     <style>
-        .twitElement{
+        .twit{
             background-color: black;
             color: white;
             border-radius: 20px;
@@ -279,7 +279,8 @@
 
 
         <div class="col-md-4 d-flex justify-content-center align-items-center "
-            style="position: fixed; width: 33.3333%; left: 33.3333%; margin-right: 20px; ">
+            style="">
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
             <div class="tabs border border-light" style=" width: 100%; margin-right: 10px; align-items: center; ">
                 <div class="tab-buttons" style="align-items: center;">
                     <button class="tab-btn active" data-tab="1">Sana Özel</button>
@@ -298,10 +299,15 @@
                     <div style="display: flex; justify-content: end; align-items: center; height: 70px;">
                         <button class="btn btn-light " style="border-radius: 50px; height: 37px;">Gönderi
                             Yayınla</button>
-                    </div>
+                    </div >
 
                 </div>
-                <div class="tab-content active" data-tab="1"> 1.içerik</div>
+                <div class="tab-content active" data-tab="1"> 
+                    <div id="twit-container"></div>
+
+
+
+                </div>
                 <div class="tab-content" data-tab="2">Bu Sekme 2 içeriği</div>
 
             </div>
@@ -310,7 +316,7 @@
         </div>
 
 
-
+    </div>
 
 
         <div class="col-md-4 d-flex justify-content-center  "
@@ -461,6 +467,25 @@
 </body>
 <script src="./bootstrap.bundle.js"></script>
 <script>
+     document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".tab-btn");
+    const contents = document.querySelectorAll(".tab-content");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const tabId = button.getAttribute("data-tab");
+
+            // Tüm butonlardan "active" sınıfını kaldır
+            buttons.forEach(btn => btn.classList.remove("active"));
+            // Tüm içeriklerden "active" sınıfını kaldır
+            contents.forEach(content => content.classList.remove("active"));
+
+            // Seçilen sekmeyi aktif yap
+            button.classList.add("active");
+            document.querySelector(`.tab-content[data-tab="${tabId}"]`).classList.add("active");
+        });
+    });
+    });
 const twits = [
         {
             "author": "Ayşe Yılmaz",
@@ -539,33 +564,16 @@ const twits = [
         let twitElement = document.createElement("div");
         twitElement.className = "twit";
         twitElement.innerHTML = `
-            <strong>${twit.author}</strong> <span style="color: gray;">${twit.username}</span><br>
-            <p>${twit.content}</p>
-            <small>${new Date(twit.date).toLocaleString()}</small><br>
-            <button class="like-btn">❤️ ${twit.likes}</button>
+        <h2>${twit.author} <span style="font-size: 12px; color: gray;">${twit.username}</span></h2>
+        <p>${twit.content}</p>
+        <p>likes: ${twit.likes}</p>
         `;
         twitContainer.appendChild(twitElement);
+        console.log(twitElement);
     });
 
-document.addEventListener("DOMContentLoaded", function () {
-        const buttons = document.querySelectorAll(".tab-btn");
-        const contents = document.querySelectorAll(".tab-content");
+       
 
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                const tabId = button.getAttribute("data-tab");
-
-                // Tüm butonlardan "active" sınıfını kaldır
-                buttons.forEach(btn => btn.classList.remove("active"));
-                // Tüm içeriklerden "active" sınıfını kaldır
-                contents.forEach(content => content.classList.remove("active"));
-
-                // Seçilen sekmeyi aktif yap
-                button.classList.add("active");
-                document.querySelector(`.tab-content[data-tab="${tabId}"]`).classList.add("active");
-            });
-        });
-    });
 
 
 
