@@ -7,6 +7,13 @@
     <title>Anasayfa / X</title>
     <link rel="stylesheet" href="./bootstrap.css">
     <style>
+        .twitElement{
+            background-color: black;
+            color: white;
+            border-radius: 20px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
         button:hover {
             background-color: grey;
             font-weight: bold;
@@ -452,80 +459,93 @@
 
 
 </body>
-<script src="./bootstrap.bundle.js">
-    const twits = []
-    {
+<script src="./bootstrap.bundle.js"></script>
+<script>
+const twits = [
         {
             "author": "Ayşe Yılmaz",
-                "username": "@ayseyilmaz",
-                    "content": "Bugün güne harika bir kahveyle başladım ☕️ #günaydın",
-                        "date": "2025-05-09T08:23:00",
-                            "likes": 128
+            "username": "@ayseyilmaz",
+            "content": "Bugün güne harika bir kahveyle başladım ☕️ #günaydın",
+            "date": "2025-05-09T08:23:00",
+            "likes": 128
         },
         {
             "author": "Mert Kaya",
-                "username": "@mertkaya",
-                    "content": "Yeni başladığım dizi tam bir efsane! Tavsiye ederim: 'Dark Matter' 🎬",
-                        "date": "2025-05-08T22:14:00",
-                            "likes": 341
+            "username": "@mertkaya",
+            "content": "Yeni başladığım dizi tam bir efsane! Tavsiye ederim: 'Dark Matter' 🎬",
+            "date": "2025-05-08T22:14:00",
+            "likes": 341
         },
         {
             "author": "Elif Demir",
-                "username": "@elifdemir",
-                    "content": "Yaz geldi, sahil yürüyüşleri başladı 🏖️ #mutluluk",
-                        "date": "2025-05-07T18:47:00",
-                            "likes": 205
+            "username": "@elifdemir",
+            "content": "Yaz geldi, sahil yürüyüşleri başladı 🏖️ #mutluluk",
+            "date": "2025-05-07T18:47:00",
+            "likes": 205
         },
         {
             "author": "Ahmet Arslan",
-                "username": "@ahmetarslan",
-                    "content": "Yapay zekâ dünyasında neler oluyor? Bugünkü blog yazımı okuyun! 🤖📘",
-                        "date": "2025-05-06T13:05:00",
-                            "likes": 87
+            "username": "@ahmetarslan",
+            "content": "Yapay zekâ dünyasında neler oluyor? Bugünkü blog yazımı okuyun! 🤖📘",
+            "date": "2025-05-06T13:05:00",
+            "likes": 87
         },
         {
             "author": "Zeynep Koç",
-                "username": "@zeynepkoc",
-                    "content": "Sabah koşusu yapınca tüm gün enerjim tavan! 🏃‍♀️💥",
-                        "date": "2025-05-09T06:30:00",
-                            "likes": 156
+            "username": "@zeynepkoc",
+            "content": "Sabah koşusu yapınca tüm gün enerjim tavan! 🏃‍♀️💥",
+            "date": "2025-05-09T06:30:00",
+            "likes": 156
         },
         {
             "author": "Can Berk",
-                "username": "@canberk",
-                    "content": "Yeni albümümü dinlediniz mi? Geri bildirimlere açığım 🎧🎶",
-                        "date": "2025-05-08T19:42:00",
-                            "likes": 422
+            "username": "@canberk",
+            "content": "Yeni albümümü dinlediniz mi? Geri bildirimlere açığım 🎧🎶",
+            "date": "2025-05-08T19:42:00",
+            "likes": 422
         },
         {
             "author": "Derya Uslu",
-                "username": "@deryauslu",
-                    "content": "Kitap önerisi isteyen var mı? Bu ay 3 kitap bitirdim 📚",
-                        "date": "2025-05-07T21:18:00",
-                            "likes": 192
+            "username": "@deryauslu",
+            "content": "Kitap önerisi isteyen var mı? Bu ay 3 kitap bitirdim 📚",
+            "date": "2025-05-07T21:18:00",
+            "likes": 192
         },
         {
             "author": "Baran Güneş",
-                "username": "@barangunes",
-                    "content": "Hava ne kadar güzel, piknik zamanı! 🍃🧺",
-                        "date": "2025-05-09T12:10:00",
-                            "likes": 267
+            "username": "@barangunes",
+            "content": "Hava ne kadar güzel, piknik zamanı! 🍃🧺",
+            "date": "2025-05-09T12:10:00",
+            "likes": 267
         },
         {
             "author": "Seda Aksoy",
-                "username": "@sedaaksoy",
-                    "content": "Bugünkü toplantıdan sonra kahve şarttı 😅 #çalışanhayat",
-                        "date": "2025-05-08T16:00:00",
-                            "likes": 143
+            "username": "@sedaaksoy",
+            "content": "Bugünkü toplantıdan sonra kahve şarttı 😅 #çalışanhayat",
+            "date": "2025-05-08T16:00:00",
+            "likes": 143
         },
         {
             "author": "Emre Yıldız",
-                "username": "@emreyildiz",
-                    "content": "Futbol gecesi! Maçı izleyenler burada mı? ⚽🔥",
-                        "date": "2025-05-08T20:45:00",
-                            "likes": 378
+            "username": "@emreyildiz",
+            "content": "Futbol gecesi! Maçı izleyenler burada mı? ⚽🔥",
+            "date": "2025-05-08T20:45:00",
+            "likes": 378
         }
-    };
+
+    ]
+    let twitContainer = document.getElementById("twit-container");
+    twits.forEach(twit => {
+        let twitElement = document.createElement("div");
+        twitElement.className = "twit";
+        twitElement.innerHTML = `
+            <strong>${twit.author}</strong> <span style="color: gray;">${twit.username}</span><br>
+            <p>${twit.content}</p>
+            <small>${new Date(twit.date).toLocaleString()}</small><br>
+            <button class="like-btn">❤️ ${twit.likes}</button>
+        `;
+        twitContainer.appendChild(twitElement);
+    });
 
 
 
@@ -534,7 +554,10 @@
 
 
 
-    document.addEventListener("DOMContentLoaded", function () {
+</script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
         const buttons = document.querySelectorAll(".tab-btn");
         const contents = document.querySelectorAll(".tab-content");
 
@@ -553,8 +576,6 @@
             });
         });
     });
-
-
 
 
 
