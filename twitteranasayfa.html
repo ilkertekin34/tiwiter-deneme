@@ -7,12 +7,18 @@
     <title>Anasayfa / X</title>
     <link rel="stylesheet" href="./bootstrap.css">
     <style>
+        
         .twit{
+            
             background-color: black;
             color: white;
-            border-radius: 20px;
-            padding: 10px;
-            margin-bottom: 10px;
+        
+            border-bottom: solid 1px #212529;
+            border-color: #212529 !important;
+
+            
+        
+            
         }
         button:hover {
             background-color: grey;
@@ -21,7 +27,6 @@
 
         body {
             font-family: sans-serif;
-            padding: 20px;
         }
 
         .tab-buttons {
@@ -33,7 +38,7 @@
             cursor: pointer;
             border: none;
             background: black;
-            margin-right: 5px;
+            
             color: white;
             width: 45%;
         }
@@ -44,8 +49,7 @@
 
         .tab-content {
             display: none;
-            padding: 15px;
-            border: 1px solid #ccc;
+            
         }
 
         .tab-content.active {
@@ -55,14 +59,11 @@
 </head>
 
 <body style="background-color: black; color:white; ">
-    <div class="col-md-12" style=" display: flex; flex-direction: row; height: 100vh; container: full;">
+    <div class="col-md-12 d-flex flex-wrap" >
 
-        <div class="col-md-4 d-flex  flex-wrap  " style="position: fixed; width: 33.3333%; left: 0;">
-
-            <div class="col-md-6"></div>
-            <div class="d-flex flex-column align-items-start justify-content-start col-md-6	"
-                style="height:100vh; gap:1rem; margin-top: 10px; ">
-                <div class="d-flex justify-content-center align-items-center" style="width: 100%;  ">
+        <div class="col-md-4 d-flex  flex-wrap  justify-content-end" >
+            <div class="d-flex flex-column align-items-start justify-content-start col-md-6	" style="height: 100vh; position: sticky; top: 0;right: 0;">
+                <div class="d-flex justify-content-center align-items-center" >
                     <g>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="10%" height="10%"
                             fill="white">
@@ -259,35 +260,18 @@
 
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
 
-        <div></div>
-        <div class="col-md-4 d-flex justify-content-center align-items-center " 
-            style="position: fixed; width: 33.3333%; left: 33.3333%;  ">
-            <div class="tabs border border-light" style=" width: 100%; margin-right: 10px; align-items: center; ">
-                <div class="tab-buttons" style="align-items: center;">
-                    <button class="tab-btn active" data-tab="1">Sana Özel</button>
-                    <button class="tab-btn" data-tab="2">Takip</button>
+        
+        <div class="col-md-4 d-flex flex-wrap justify-content-center " >
+            <div class="tabs border border-dark" style="  align-items: center; ">
+                <div class="tab-buttons" style="width: 100%; ">
+                    <button class="tab-btn active" data-tab="1" style="width:48%;">Sana Özel</button>
+                    <button class="tab-btn" data-tab="2" style="width: 49%;">Takip</button>
 
                 </div>
-                <div class="border border-bottom-light">
-                    <div class="border border-light">
+                <div class="border border-dark">
+                    <div class="border border-dark " >
                         <img src="insan ikonu.png" alt="" style="width: 5%; height: 5%; border-radius: 50px;">
                         <input type="text" name="" id="" placeholder="Neler Oluyor?"
                             style="background-color: black; color: white; border-style: none; width: 94%; height: 50px;">
@@ -301,8 +285,8 @@
                     </div >
 
                 </div>
-                <div class="tab-content active" data-tab="1"> 
-                    <div id="twit-container"></div>
+                <div class="tab-content active" data-tab="1" > 
+                    <div id="twit-container"  ></div>
 
 
 
@@ -319,13 +303,13 @@
 
 
         <div class="col-md-4 d-flex justify-content-center  "
-            style=" position: relative; width: 33.3333ü%; left:  66.66666%; ">
-            <div class="col-md-6">
-                <input type="search" name="arama" class="border border-light" id="ara" placeholder=" Ara"
-                    style="margin-top: 10px; background-color: black; color: white;border-radius: 50px; width: 100%; height: 5%; border-style: solid;">
+            >
+            <div class="col-md-6" style="position: sticky; top: 0; height:fit-content">
+                <input type="search" name="arama" class="border border-dark" id="ara" placeholder=" Ara"
+                    style="margin-top: 10px; background-color: black; color: white;border-radius: 50px; width: 100%; ">
 
-                <div style="border-style: solid; align-items: center; margin-top: 10px; border-radius: 20px;"
-                    class="border border-light">
+                <div style=" align-items: center; margin-top: 10px; border-radius: 20px;"
+                    class="border border-dark">
                     <div style="margin: 5%;">
                         <h3>
                             <strong>
@@ -341,8 +325,8 @@
                             style="border-radius: 50px;">
                     </div>
                 </div>
-                <div style="border-style: solid; align-items: center; margin-top: 10px; border-radius: 20px;"
-                    class="border border-light">
+                <div style="  align-items: center; margin-top: 10px; border-radius: 20px;"
+                 class="border border-dark"   >
                     <div style="margin: 10px;">
 
                         <h5>
@@ -393,7 +377,7 @@
 
                 </div>
 
-                <div style="border-style: solid;  margin-top: 10px; border-radius: 20px; " class="border border-light">
+                <div style="  margin-top: 10px; border-radius: 20px; " class="border border-dark">
                     <div style="margin:10px;">
 
                         <h5>
@@ -487,74 +471,99 @@
     });
 const twits = [
         {
+            "profile":"insan ikonu.png",
             "author": "Ayşe Yılmaz",
             "username": "@ayseyilmaz",
             "content": "Bugün güne harika bir kahveyle başladım ☕️ #günaydın",
+            "photo": "kahve.webp",
             "date": "2025-05-09T08:23:00",
-            "likes": 128
+            "likes": 128,
+            "retwits": 45,
+            "watch": 12
         },
         {
             "author": "Mert Kaya",
             "username": "@mertkaya",
-            "content": "Yeni başladığım dizi tam bir efsane! Tavsiye ederim: 'Dark Matter' 🎬",
+            "content": "Agam dünyanın en komik espirisini yapmıştır ama cinsiyeti kızdır",
+            "video":"20489.MP4",
             "date": "2025-05-08T22:14:00",
-            "likes": 341
+            "likes": 341,
+            "retwits": 78,
+            "watch": 23
         },
         {
             "author": "Elif Demir",
             "username": "@elifdemir",
-            "content": "Yaz geldi, sahil yürüyüşleri başladı 🏖️ #mutluluk",
+            "content": "iş yerindekilerle tartışmışımdır",
+            "video":"20605.MP4",
             "date": "2025-05-07T18:47:00",
-            "likes": 205
+            "likes": 205,
+            "retwits": 56,
+            "watch": 19
         },
         {
-            "author": "Ahmet Arslan",
-            "username": "@ahmetarslan",
-            "content": "Yapay zekâ dünyasında neler oluyor? Bugünkü blog yazımı okuyun! 🤖📘",
+            "author": "Serhan Özcan",
+            "username": "@srhnözcn",
+            "content": "Bizde deriniz....",
+            "video":"21799.MP4",
             "date": "2025-05-06T13:05:00",
-            "likes": 87
+            "likes": 87,
+            "retwits": 12,
+            "watch": 5
         },
         {
             "author": "Zeynep Koç",
             "username": "@zeynepkoc",
             "content": "Sabah koşusu yapınca tüm gün enerjim tavan! 🏃‍♀️💥",
             "date": "2025-05-09T06:30:00",
-            "likes": 156
+            "likes": 156,
+            "retwits": 34,
+            "watch": 8
         },
         {
             "author": "Can Berk",
             "username": "@canberk",
             "content": "Yeni albümümü dinlediniz mi? Geri bildirimlere açığım 🎧🎶",
             "date": "2025-05-08T19:42:00",
-            "likes": 422
+            "likes": 422,
+            "retwits": 90,
+            "watch": 15
         },
         {
             "author": "Derya Uslu",
             "username": "@deryauslu",
             "content": "Kitap önerisi isteyen var mı? Bu ay 3 kitap bitirdim 📚",
             "date": "2025-05-07T21:18:00",
-            "likes": 192
+            "likes": 192,
+            "retwits": 29,
+            "watch": 10
         },
         {
             "author": "Baran Güneş",
             "username": "@barangunes",
             "content": "Hava ne kadar güzel, piknik zamanı! 🍃🧺",
             "date": "2025-05-09T12:10:00",
-            "likes": 267
+            "likes": 267,
+            "retwits": 50,
+            "watch": 20
         },
         {
             "author": "Seda Aksoy",
             "username": "@sedaaksoy",
             "content": "Bugünkü toplantıdan sonra kahve şarttı 😅 #çalışanhayat",
             "date": "2025-05-08T16:00:00",
-            "likes": 143
+            "likes": 143,
+            "retwits": 25,
+            "watch": 7
         },
         {
             "author": "Emre Yıldız",
             "username": "@emreyildiz",
             "content": "Futbol gecesi! Maçı izleyenler burada mı? ⚽🔥",
             "date": "2025-05-08T20:45:00",
-            "likes": 378
+            "likes": 378,
+            "retwits": 60,
+            "watch": 30
         }
 
     ]
@@ -563,9 +572,21 @@ const twits = [
         let twitElement = document.createElement("div");
         twitElement.className = "twit";
         twitElement.innerHTML = `
-        <h2>${twit.author} <span style="font-size: 12px; color: gray;">${twit.username}</span></h2>
+        <div ><img src="${twit.profile} "alt="Twit Profil" style="width: 5%; height: 5% ; border-radius: 30px;"  ></div
+        <div class="border border-dark">
+        <h5>${twit.author} <span style="font-size: 12px; color: gray;"> <strong>${twit.username} </strong></span></h2>
         <p>${twit.content}</p>
-        <p>likes: ${twit.likes}</p>
+        <div style="display: flex; align-items: center;">
+            ${twit.photo ? `<img src="${twit.photo}" alt="Twit Photo" style="width: 95%; height: auto; border-radius: 10px;">` : ''}
+            ${twit.video ? `<video controls style="width: 100%; height: auto; border-radius: 10px;">
+                    <source src="${twit.video}" type="video/mp4">
+                    Your browser does not support the video tag.
+                    </video>` : ''}
+        </div>
+        <p>likes: ${twit.likes}
+        retwits: ${twit.retwits}
+        watch: ${twit.watch}</p>
+        </div>
         `;
         twitContainer.appendChild(twitElement);
         console.log(twitElement);
